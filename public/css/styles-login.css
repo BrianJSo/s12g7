@@ -5,12 +5,12 @@
 
 body {
     min-height: 100vh;
-    background-color: #e7f1ed;
+    background-color: #ecf1e7;
     /* background-image: linear-gradient(135deg, #4bd1d1, #38b98a 30%); */
 }
 
 .card {
-    padding: 60px 80px;
+    padding: 30px 40px;
 }
 
 .card:hover {
@@ -18,7 +18,7 @@ body {
 }
 
 .brand-logo {
-    height: 100px;
+    height: 200px;
 }
 
 .header-brand {

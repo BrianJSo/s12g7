@@ -57,12 +57,18 @@ mongoose.connect('mongodb://rootuser:p%40ssword@pahiram-shard-00-00-eypip.mongod
 
 hbs.registerPartials(__dirname + '/views/partials');
 
+app.use(function (req, res, next) {
+    console.log(req.url);
+    next()
+})
+
 app.use('/', index);
 app.use('/profile', UserAuth.userIsLoggedIn, UserAuth.userIsNew, profile);
 app.use('/reserve', UserAuth.userIsLoggedIn, UserAuth.userIsNew, reserve);
 app.use('/reservations', UserAuth.userIsLoggedIn, UserAuth.userIsNew, myReservations);
 app.use('/manage-lockers', UserAuth.userIsLoggedIn, UserAuth.userIsNew, panel);
 app.use('/manage-equipment', UserAuth.userIsLoggedIn, UserAuth.userIsNew, equipment);
+
 
 app.use(function (req, res, next) {
     res.status(404).render('404-page', {
